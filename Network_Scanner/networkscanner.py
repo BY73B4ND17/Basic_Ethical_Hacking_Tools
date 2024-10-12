@@ -8,6 +8,8 @@ def get_arguments():
 	parser = optparse.OptionParser()
 	parser.add_option("-r","--range",dest="ip_range",help="Enter the range of IP Addresses")
 	(options,arguments) = parser.parse_args()
+	if not options.ip_range:
+		parser.error("[!] Enter a target range of IP Addresses!")
 	return options
 
 def scan(ip_address):
@@ -25,10 +27,13 @@ def scan(ip_address):
 	return clients_list
 	
 def print_results(results_list):
+	print("ARP Responses Received Successfully!")
+	print("")
 	print("IP Address\tMAC Address\n-----------------------------------------------")
 	for client in results_list:
 		print(client["ip"]+"\t"+client["mac"])
 
 options = get_arguments()
 scan_result = scan(options.ip_range)
+time.sleep(2)
 print_results(scan_result)
