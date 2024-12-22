@@ -1,2 +1,3 @@
-# Basic_Ethical_Hacking_Tools
-Some tools created with Python, which are used in Ethical Hacking 
+# Python_100_Days_Of_Code
+
+Following 100 Days Of Code by Angela Yu and App Brewery and adding all the Projects here.
